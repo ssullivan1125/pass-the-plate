@@ -1,0 +1,12 @@
+
+ .background{
+   background-image: url("images/soupkitchen.png");
+   height: 500px;
+   -webkit-filter: blur(8px):
+}
+
+.text{
+  color: white;
+  padding: 200px 0;
+  text-align: center;
+}
