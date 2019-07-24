@@ -10,7 +10,7 @@ body {
 nav {
   display: flex;
   border:2px solid lightgrey;
-  background-color: pink;
+  background-color: grey;
   font-weight: bold;
   color: white;
 }
