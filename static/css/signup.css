@@ -9,7 +9,7 @@ body {
 nav {
   display: flex;
   border:2px solid lightgrey;
-  background-color: #5A7BFF;
+  background-color: #5CFFF3;
   font-weight: bold;
   border-radius: 30px;
   justify-content: center;
@@ -26,9 +26,9 @@ nav {
 } */
 
 .menulink {
-  color: white;
+  color: black;
   font-size: 14px;
-  padding: 10px 20px 10px 20px;
+  padding: 8px 20px 8px 20px;
   font-size: 20px;
   flex-grow: 1px;
   /* align-content: center; */
@@ -53,5 +53,6 @@ nav {
   margin: 10% 30% 10% 30%;
   width: 38%;
   height: 45%;
-  border: 10px solid red;
+  background-color: #5CFFF3;
+  border-radius: 25px;
 }
