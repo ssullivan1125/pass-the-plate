@@ -1,0 +1,83 @@
+html {
+  border: 1px dotted purple;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  border:2px solid lightgrey;
+  background-color: pink;
+  font-weight: bold;
+  color: white;
+}
+
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#green {
+  background-color: green;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+}
+
+.menulink {
+  color: white;
+  padding: 10px;
+}
+
+.menulink:hover {
+  background-color: green;
+}
+
+.spacer {
+  flex-grow: 1;
+  border: 1px solid purple;
+}
+
+h1 {
+  align-items: center;
+}
+
+h2 {
+  align-items: center;
+}
+/* #parent {
+  border: 3px dotted black;
+  display: flex;
+  height: 500px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+} */
+
+
+
+/*
+
+.signup {
+  background-image: url("restaurantbackground.jpeg");
+}
+
+.signup h1 {
+  font-family: "Montserrat", sans-serif;
+} */
+=======
+
+.text{
+  color: white;
+  padding: 200px 0;
+  text-align: center;
+}
