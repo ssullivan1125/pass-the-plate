@@ -9,39 +9,30 @@
     <nav>
       <h1 class="menulink" id="passtheplatelogo">Pass the Plate</h1>
       <span class="spacer"></span>
-      <a class="menulink" href="../templates/foodlistings">Food Listings</a>
-      <a class="menulink" href="/account">Signin</a>
+      <a class="menulink" href="google.com">About</a>
+      <a class="menulink" href="google.com">Signin</a>
     </nav>
 
     <div class="listings">
       <div class="listingbox">
-        <h1>{{ foodname1 }}</h1>
-        <p>{{ food_details1 }}</p>
-        <p>{{ address }}</p>
+        <p>This is the signup box ipsum lorum base</p>
       </div>
       <div class="listingbox">
-        <h1>{{ foodname2 }}</h1>
-        <p>{{ food_details2 }}</p>
-        <p>{{ address2 }}</p>
+        <p>This is the signup box ipsum lorum base</p>
       </div>
       <div class="listingbox">
-        <h1>{{ foodname3 }}</h1>
-        <p>{{ food_details3 }}</p>
-        <p>{{ address3 }}</p>
+        <p>This is the signup box ipsum lorum base</p>
       </div>
       <div class="listingbox">
-        <h1>{{ foodname4 }}</h1>
-        <p>{{ food_details4 }}</p>
-        <p>{{ address4 }}</p>      </div>
-      <div class="listingbox">
-        <h1>{{ foodname5 }}</h1>
-        <p>{{ food_details5 }}</p>
-        <p>{{ address5 }}</p>      </div>
-      <div class="listingbox">
-        <h1>{{ foodname6 }}</h1>
-        <p>{{ food_details6 }}</p>
-        <p>{{ address6 }}</p>
+        <p>This is the signup box ipsum lorum base</p>
       </div>
+      <div class="listingbox">
+        <p>This is the signup box ipsum lorum base</p>
+      </div>
+      <div class="listingbox">
+        <p>This is the signup box ipsum lorum base</p>
+      </div>
+
       <p></p>
     </div>
 
