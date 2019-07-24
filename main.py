@@ -10,13 +10,14 @@ jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-class WelcomePage(webapp2.RequestHandler):
+class WelcomeHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_env.get_template('templates/homepage.html')
         self.response.write(template.render())
 
 class FoodHandler(webapp2.RequestHandler):
     def get(self):
+        print('Hi! Here are the food listings!')
         template = jinja_env.get_template('templates/foodlistings.html')
         self.response.write(template.render())
 
@@ -92,8 +93,10 @@ class CreatePostHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-  ('/', WelcomePage),
+  ('/', WelcomeHandler),
   ('/account', MainHandler),
-  ('/foodlistings',FoodHandler)
+  ('/foodlistings', FoodHandler),
+  # ('/test', CreatePostHandler)
+
 
 ], debug=True)
