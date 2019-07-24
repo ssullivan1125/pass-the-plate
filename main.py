@@ -10,19 +10,12 @@ jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-#  class Post(ndb.Model):
-#      title_id = ndb.StringProperty(required = True)
-#      content_id = ndb.StringProperty(required = True)
-#
-# class Organization(ndb.Model):
-#     posts = ndb.KeyProperty(Post, repeated = True)
-
 class WelcomePage(webapp2.RequestHandler):
     def get(self):
         template = jinja_env.get_template('templates/homepage.html')
         self.response.write(template.render())
 
-class FoodPage(webapp2.RequestHandler):
+class FoodHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_env.get_template('templates/foodlistings.html')
         self.response.write(template.render())
@@ -68,9 +61,39 @@ class MainHandler(webapp2.RequestHandler):
      self.response.write('Thanks for signing up, %s! <br><a href="/">Home</a>' %
          ptp_user.organization_name)
 
+
+class CreatePostHandler(webapp2.RequestHandler):
+     def get(self):
+        template = jinja_env.get_template('templates/homepage.html')
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write(create_template.render())
+
+     def post(self):
+        curr_message_txt = self.request.get('message')
+        curr_user = user.get_current_user()
+        intended_reciever = 'test@gmail.com'
+
+        possible_reciever = PtpUser.query(intended_reciever == PtpUser.email).get()
+
+        curr_message = Message(
+        message_txt = curr_message_txt,
+        sender = curr_user,
+        reciever = intended_reciever
+        )
+
+        message_key = curr_message.put()
+
+        sending_user = PtpUser.query(curr_user.nickname == PtpUser.email.get())
+
+        sending_user.messages.append(message_key).put()
+
+        self.redirect('/profile')
+
+
+
 app = webapp2.WSGIApplication([
   ('/', WelcomePage),
   ('/account', MainHandler),
-  ('/foodlistings',FoodPage)
+  ('/foodlistings',FoodHandler)
 
 ], debug=True)
