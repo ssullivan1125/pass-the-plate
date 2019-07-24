@@ -9,7 +9,7 @@ body {
 nav {
   display: flex;
   border:2px solid lightgrey;
-  background-color: rgba(92, 255, 243, 0.5);
+  background-color: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%);
   font-weight: bold;
   border-radius: 30px;
   justify-content: center;
@@ -18,15 +18,7 @@ nav {
 body {
   background-image: url("../images/foodtable.jpeg");
 }
-/* #parent {
-  border: 3px dotted black;
-  display: flex;
-  height: 500px;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-} */
+
 
 .menulink {
   color: black;

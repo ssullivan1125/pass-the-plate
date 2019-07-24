@@ -1,5 +1,4 @@
 html {
-  border: 1px dotted purple;
   height: 100%;
 }
 
@@ -10,63 +9,45 @@ body {
 nav {
   display: flex;
   border:2px solid lightgrey;
-  background-color: pink;
+  background-color: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%);
   font-weight: bold;
-  color: white;
+  border-radius: 30px;
+  justify-content: center;
 }
 
-#red {
-  background-color: red;
+body {
+  background-image: url("../images/foodtable.jpeg");
 }
 
-#blue {
-  background-color: blue;
-}
-
-#green {
-  background-color: green;
-}
-
-.box {
-  height: 100px;
-  width: 100px;
-}
 
 .menulink {
-  color: white;
-  padding: 10px;
-  
+  color: black;
+  font-size: 14px;
+  padding: 8px 20px 8px 20px;
+  font-size: 20px;
+  flex-grow: 1px;
+  /* align-content: center; */
 }
 
 .menulink:hover {
-  background-color: green;
-
+  background-color: #7ADAEB;
 }
 
 .spacer {
-  flex-grow: 1;
-  border: 1px solid purple;
+  flex-grow: 3;
+  border: 3px solid purple;
 }
 
-
-/* #parent {
-  border: 3px dotted black;
-  display: flex;
-  height: 500px;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-} */
-
-
-
-/*
-
-.signup {
-  background-image: url("restaurantbackground.jpeg");
+#passtheplatelogo {
+  /* padding-left: 15px;
+  padding-right: 20px; */
 }
 
-.signup h1 {
-  font-family: "Montserrat", sans-serif;
-} */
+#signupbox {
+  margin-left: 30%;
+  margin: 10% 30% 10% 30%;
+  width: 38%;
+  height: 45%;
+  background-color: #5CFFF3;
+  border-radius: 25px;
+}
