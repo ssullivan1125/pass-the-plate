@@ -1,0 +1,57 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  border:2px solid lightgrey;
+  background-color: #5A7BFF;
+  font-weight: bold;
+  border-radius: 30px;
+  justify-content: center;
+}
+
+/* #parent {
+  border: 3px dotted black;
+  display: flex;
+  height: 500px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+} */
+
+.menulink {
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+  font-size: 20px;
+  flex-grow: 1px;
+  /* align-content: center; */
+}
+
+.menulink:hover {
+  background-color: #7ADAEB;
+}
+
+.spacer {
+  flex-grow: 3;
+  border: 3px solid purple;
+}
+
+#passtheplatelogo {
+  /* padding-left: 15px;
+  padding-right: 20px; */
+}
+
+#signupbox {
+  margin-left: 30%;
+  margin: 10% 30% 10% 30%;
+  width: 38%;
+  height: 45%;
+  border: 10px solid red;
+}
