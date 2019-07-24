@@ -3,18 +3,36 @@ import os
 import jinja2
 import random
 from google.appengine.api import users
-from google.appengine.ext import ndb
+from models import PtpUser
 
-class PtpUser(ndb.Model):
-  organization_name = ndb.StringProperty()
-  email = ndb.StringProperty()
+jinja_env = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
+
+#  class Post(ndb.Model):
+#      title_id = ndb.StringProperty(required = True)
+#      content_id = ndb.StringProperty(required = True)
+#
+# class Organization(ndb.Model):
+#     posts = ndb.KeyProperty(Post, repeated = True)
+
+class WelcomePage(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_env.get_template('templates/homepage.html')
+        self.response.write(template.render())
+
+class FoodPage(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_env.get_template('templates/foodlistings.html')
+        self.response.write(template.render())
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
     user = users.get_current_user()
 
     if user:
-      logout_link_html = '<a href="%s">sign out</a>' % (users.create_logout_url('/'))
+      signout_link_html = '<a href="%s">sign out</a>' % (users.create_logout_url('/'))
       email_address = user.nickname()
       ptp_user = PtpUser.query().filter(PtpUser.email == email_address).get()
 
@@ -24,11 +42,14 @@ class MainHandler(webapp2.RequestHandler):
       else:
           self.response.write('''
             Welcome to our site, %s!  Please sign up! <br>
-            <form method="post" action="/">
-            <input type="text" name="organization_name">
+            <form method="post" action="/account">
+            <input type="text" name="first_name" placeholder = "First Name">
+            <input type="text" name="last_name" placeholder = "Last Name">
+            <input type="text" name="organization_name" placeholder = "Organization Name">
+            <input type="text" name="organization_type" placeholder = "Distributor or Reciever">
             <input type="submit">
             </form><br> %s <br>
-            ''' % (email_address, logout_link_html))
+            ''' % (email_address, signout_link_html))
     else:
       login_url = users.create_login_url('/')
       login_html_element = '<a href="%s">Sign in</a>' % login_url
@@ -37,12 +58,19 @@ class MainHandler(webapp2.RequestHandler):
   def post(self):
      user = users.get_current_user()
      ptp_user = PtpUser(
+         first_name=self.request.get('first_name'),
+         last_name=self.request.get('last_name'),
          organization_name=self.request.get('organization_name'),
+         organization_type=self.request.get('organization_type'),
          email=user.nickname())
+
      ptp_user.put()
      self.response.write('Thanks for signing up, %s! <br><a href="/">Home</a>' %
          ptp_user.organization_name)
 
 app = webapp2.WSGIApplication([
-  ('/', MainHandler)
+  ('/', WelcomePage),
+  ('/account', MainHandler),
+  ('/foodlistings',FoodPage)
+
 ], debug=True)
