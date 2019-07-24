@@ -18,3 +18,8 @@
     webkit-filter: blur(4px); /* Chrome, Safari, Opera */
     filter: blur(4px);
 }
+
+h1 {
+  font-family: 'Francois One', sans-serif;
+
+}
