@@ -9,12 +9,15 @@ body {
 nav {
   display: flex;
   border:2px solid lightgrey;
-  background-color: #5CFFF3;
+  background-color: rgba(92, 255, 243, 0.5);
   font-weight: bold;
   border-radius: 30px;
   justify-content: center;
 }
 
+body {
+  background-image: url("../images/foodtable.jpeg");
+}
 /* #parent {
   border: 3px dotted black;
   display: flex;
