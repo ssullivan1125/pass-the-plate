@@ -49,17 +49,28 @@ h1 {
   border-radius: 25px;
   background-color: #7ADAEB;
 }
+
+.postbox form {
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
 .postbox label {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
+  width: 30%;
+  height: 20%;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   float: right;
-
 }
 
+.postbox label input{
+  font-size: 13px;
+}
 
 .listingbox {
   flex-grow: 1;
