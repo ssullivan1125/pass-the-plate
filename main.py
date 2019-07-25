@@ -94,6 +94,8 @@ class CreatePostHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
   ('/', WelcomePage),
   ('/account', MainHandler),
-  ('/foodlistings',FoodHandler)
+  ('/foodlistings',FoodHandler),
+  # ('/test', CreatePostHandler)
+
 
 ], debug=True)
