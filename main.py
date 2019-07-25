@@ -123,6 +123,11 @@ class CreatePostHandler(webapp2.RequestHandler):
         template = jinja_env.get_template('templates/foodlistings.html')
         self.response.write(template.render(the_post_var))
 
+class AboutHandler(webapp2.RequestHandler):
+    def get(self):
+        start_template = jinja_env.get_template("templates/aboutus.html")
+        self.response.write(start_template.render())
+
 
 # class CreatePostHandler(webapp2.RequestHandler):
 #      def get(self):
@@ -157,7 +162,8 @@ app = webapp2.WSGIApplication([
   ('/', WelcomeHandler),
   ('/account', MainHandler),
   ('/createpost', CreatePostHandler),
-  ('/foodlistings', ViewPostHandler)
+  ('/foodlistings', ViewPostHandler),
+  ('/about', AboutHandler)
 
 
 ], debug=True)
