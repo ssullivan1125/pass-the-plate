@@ -15,10 +15,15 @@ class WelcomeHandler(webapp2.RequestHandler):
         template = jinja_env.get_template('templates/homepage.html')
         self.response.write(template.render())
 
-class FoodHandler(webapp2.RequestHandler):
+class ViewPostHandler(webapp2.RequestHandler):
     def get(self):
         print('Hi! Here are the food listings!')
         template = jinja_env.get_template('templates/foodlistings.html')
+        self.response.write(template.render())
+
+class SigninHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_env.get_template('templates/SignupPage.html')
         self.response.write(template.render())
 
 class MainHandler(webapp2.RequestHandler):
@@ -47,7 +52,7 @@ class MainHandler(webapp2.RequestHandler):
     else:
       login_url = users.create_login_url('/')
       login_html_element = '<a href="%s">Sign in</a>' % login_url
-      self.response.write('Please log in.<b>' + login_html_element)
+      self.response.write('Please log in.<b>') + login_html_element)
 
   def post(self):
      user = users.get_current_user()
@@ -62,41 +67,63 @@ class MainHandler(webapp2.RequestHandler):
      self.response.write('Thanks for signing up, %s! <br><a href="/">Home</a>' %
          ptp_user.organization_name)
 
-
 class CreatePostHandler(webapp2.RequestHandler):
-     def get(self):
-        template = jinja_env.get_template('templates/homepage.html')
-        self.response.headers['Content-Type'] = 'text/html'
-        self.response.write(create_template.render())
+    def get(self):
+        start_template = jinja_env.get_template("templates/newpost.html")
+        self.response.write(start_template.render())
 
-     def post(self):
-        curr_message_txt = self.request.get('message')
-        curr_user = user.get_current_user()
-        intended_reciever = 'test@gmail.com'
+    def post(self):
+        organization_var = self.request.get('organization')
+        produce_var = self.request.get('produce')
+        expiration_var = self.request.get('expiration')
+        location_var = self.request.get('location')
+        delievery_var = self.request.get('delievery')
 
-        possible_reciever = PtpUser.query(intended_reciever == PtpUser.email).get()
+        the_post_var = {
+            "organization_var": organization_var,
+            "produce_var": produce_var,
+            "expiration_var": expiration_var,
+            "location_var": location_var,
+            "delievery_var": delievery_var
+        }
+        template = jinja_env.get_template('templates/view_post.html')
+        self.response.write(template.render(the_post_var))
 
-        curr_message = Message(
-        message_txt = curr_message_txt,
-        sender = curr_user,
-        reciever = intended_reciever
-        )
 
-        message_key = curr_message.put()
-
-        sending_user = PtpUser.query(curr_user.nickname == PtpUser.email.get())
-
-        sending_user.messages.append(message_key).put()
-
-        self.redirect('/profile')
+# class CreatePostHandler(webapp2.RequestHandler):
+#      def get(self):
+#         template = jinja_env.get_template('templates/homepage.html')
+#         self.response.headers['Content-Type'] = 'text/html'
+#         self.response.write(create_template.render())
+#
+#      def post(self):
+#         curr_message_txt = self.request.get('message')
+#         curr_user = user.get_current_user()
+#         intended_reciever = 'test@gmail.com'
+#
+#         possible_reciever = PtpUser.query(intended_reciever == PtpUser.email).get()
+#
+#         curr_message = Message(
+#         message_txt = curr_message_txt,
+#         sender = curr_user,
+#         reciever = intended_reciever
+#         )
+#
+#         message_key = curr_message.put()
+#
+#         sending_user = PtpUser.query(curr_user.nickname == PtpUser.email.get())
+#
+#         sending_user.messages.append(message_key).put()
+#
+#         self.redirect('/profile')
 
 
 
 app = webapp2.WSGIApplication([
   ('/', WelcomeHandler),
   ('/account', MainHandler),
-  ('/foodlistings', FoodHandler),
-  # ('/test', CreatePostHandler)
+  ('/createpost', CreatePostHandler),
+  ('/foodlistings', ViewPostHandler)
 
 
 ], debug=True)
