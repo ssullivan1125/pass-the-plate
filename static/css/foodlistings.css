@@ -45,9 +45,9 @@ h1 {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  margin: 6% 0% 10% 15%;
-  width: 68%;
-  height: 70%;
+  margin: 80px 0px 50px 270px;
+  width: 1100px;
+  height: 600px;
   border: 5px solid red;
   border-radius: 25px;
 
@@ -55,8 +55,8 @@ h1 {
 
 .listingbox {
   flex-grow: 1;
-  width: 30%;
-  height: 22%;
+  width: 400px;
+  height: 170px;
   margin-right: 5%;
   margin-left: 5%;
   background-color: #5CFFF3;

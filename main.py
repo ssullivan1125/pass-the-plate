@@ -75,7 +75,8 @@ class MainHandler(webapp2.RequestHandler):
     else:
       login_url = users.create_login_url('/')
       login_html_element = '<a href="%s">Sign in</a>' % login_url
-      self.response.write('Please log in.<b>' + login_html_element)
+      template = jinja_env.get_template('templates/SignupPage.html')
+      self.response.write(template.render())
 
   def post(self):
      user = users.get_current_user()
