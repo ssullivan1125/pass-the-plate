@@ -4,6 +4,7 @@ import jinja2
 import random
 from google.appengine.api import users
 from models import PtpUser
+from models import SavePost
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -23,7 +24,7 @@ class ViewPostHandler(webapp2.RequestHandler):
         self.response.write(template.render())
 
     def post(self):
-        view_all_posts = Save.Post.query().fetch()
+        view_all_posts = SavePost.query().fetch()
 
         organization_input = self.request.get('organization')
         produce_input = self.request.get('produce')
@@ -34,12 +35,15 @@ class ViewPostHandler(webapp2.RequestHandler):
         new_post = SavePost( organization=organization_input, produce=produce_input, expiration=expiration_input, location=location_input, delievery=delievery_input)
         new_post.put()
 
-        all_posts.insert(0, new_post)
+        view_all_posts.insert(0, new_post)
 
         template_vars = {
             "new_post": new_post,
-            "all_posts": all_posts
+            "view_all_posts": view_all_posts
         }
+
+        print(view_all_posts)
+        print(new_post)
 
         template = jinja_env.get_template('templates/foodlistings.html')
         self.response.write(template.render(template_vars))
