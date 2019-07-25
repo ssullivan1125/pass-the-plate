@@ -15,43 +15,20 @@
       <a class="menulink" href="../static/homepage.html">Signin</a>
     </nav>
 
+
+    {% for post in view_all_posts %}
+
     <div class="listings">
       <div class="listingbox">
-        <h2>{{ new_post.organization }}</h2>
-        <h3> Produce Avalible: {{ new_post.produce }}</h3>
-        <p> Location: {{ new_post.location }}</p>
-        <p> Expiration: {{ new_post.expiration }}</p>
-        <p> Method of Transportation: {{ new_post.delievery }}</p>
-
-
+        <h2>{{ post.organization }}</h2>
+        <h3> Produce Avalible: {{ post.produce }}</h3>
+        <p> Location: {{ post.location }}</p>
+        <p> Expiration: {{ post.expiration }}</p>
+        <p> Method of Transportation: {{ post.delievery }}</p>
       </div>
-      <div class="listingbox">
-        <h2>{{ new_post.organization }}</h2>
-        <h3> Produce Avalible: {{ new_post.produce }}</h3>
-        <p> Location: {{ new_post.location }}</p>
-        <p> Expiration: {{ new_post.expiration }}</p>
-        <p> Method of Transportation: {{ new_post.delievery }}</p>
-      </div>
-      <div class="listingbox">
-        <h1>{{ foodname3 }}</h1>
-        <p>{{ food_details3 }}</p>
-        <p>{{ address3 }}</p>
-      </div>
-      <div class="listingbox">
-        <h1>{{ foodname4 }}</h1>
-        <p>{{ food_details4 }}</p>
-        <p>{{ address4 }}</p>      </div>
-      <div class="listingbox">
-        <h1>{{ foodname5 }}</h1>
-        <p>{{ food_details5 }}</p>
-        <p>{{ address5 }}</p>      </div>
-      <div class="listingbox">
-        <h1>{{ foodname6 }}</h1>
-        <p>{{ food_details6 }}</p>
-        <p>{{ address6 }}</p>
-      </div>
-      <p></p>
     </div>
+
+    {% endfor %}
 
 
     <!-- <div class="signup">

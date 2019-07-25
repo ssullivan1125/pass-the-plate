@@ -18,10 +18,18 @@ class WelcomeHandler(webapp2.RequestHandler):
 
 class ViewPostHandler(webapp2.RequestHandler):
     def get(self):
+
+        view_all_posts = SavePost.query().fetch()
+
+        template_vars = {
+            "view_all_posts": view_all_posts
+        }
+
         template = jinja_env.get_template('templates/foodlistings.html')
         # print('Hi! Here are the food listings!')
         self.response.headers['Content-Type'] = 'text/html'
-        self.response.write(template.render())
+        self.response.write(template.render(template_vars))
+
 
     def post(self):
         view_all_posts = SavePost.query().fetch()
@@ -74,9 +82,11 @@ class MainHandler(webapp2.RequestHandler):
             ''' % (email_address, signout_link_html))
     else:
       login_url = users.create_login_url('/')
-      login_html_element = '<a href="%s">Sign in</a>' % login_url
+      template_vars = {
+      "login_url": login_url
+      }
       template = jinja_env.get_template('templates/SignupPage.html')
-      self.response.write(template.render())
+      self.response.write(template.render(template_vars))
 
   def post(self):
      user = users.get_current_user()
