@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Food Post Form</title>
+    <link rel="stylesheet" href="../static/css/newpost.css">
+  </head>
+  <body>
+
+    <nav>
+      <link rel="html" href="https://www.google.com">
+      <a class="menulink" id="passtheplatelogo" href="foodlistings.html">Pass the Plates</a>
+      <span class="spacer"></span>
+      <a class="menulink" href="foodlistings.html">Food Listings</a>
+      <a class="menulink" href="../static/homepage.html">Signin</a>
+    </nav>
+
+    <div class="postbox">
+      <form method="post" action="/newpost">
+        <label>Organization:</label>
+          <input type="text" name="organization" value="" placeholder="Organization Name">
+          <br/>
+
+        <label>Produce:</label>
+          <input type="text" name="produce" value="" placeholder= "Produce Avalible">
+        <br/>
+
+        <label>Expiration:</label>
+          <input type="text" name="expiration" value="" placeholder= "Experiation Date">
+        <br/>
+
+        <label>Location:</label>
+          <input type="text" name="location" value="" placeholder= "Restaurant Location">
+        <br/>
+
+        <label>Delievery:</label>
+          <input type="text" name="delievery" value="" placeholder= "Delievery or Pickup">
+        <br/>
+        
+        <button type="sumbit">Sumbit!</button>
+
+      </form>
+    </div>
+
+  </body>
+</html>

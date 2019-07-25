@@ -13,6 +13,14 @@ class Message(ndb.Model):
     sender = ndb.KeyProperty()
     reciever = ndb.KeyProperty()
 
+class SavePost(ndb.Model):
+    organization = ndb.StringProperty()
+    produce = ndb.StringProperty()
+    expiration = ndb.StringProperty()
+    location = ndb.StringProperty()
+    deliever = ndb.StringProperty()
+
+
 #  class Post(ndb.Model):
 #      title_id = ndb.StringProperty(required = True)
 #      content_id = ndb.StringProperty(required = True)
