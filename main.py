@@ -17,14 +17,33 @@ class WelcomeHandler(webapp2.RequestHandler):
 
 class ViewPostHandler(webapp2.RequestHandler):
     def get(self):
-        print('Hi! Here are the food listings!')
         template = jinja_env.get_template('templates/foodlistings.html')
+        # print('Hi! Here are the food listings!')
+        self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
-class SigninHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_env.get_template('templates/SignupPage.html')
-        self.response.write(template.render())
+    def post(self):
+        view_all_posts = Save.Post.query().fetch()
+
+        organization_input = self.request.get('organization')
+        produce_input = self.request.get('produce')
+        expiration_input = self.request.get('expiration')
+        location_input = self.request.get('location')
+        delievery_input = self.request.get('delievery')
+
+        new_post = SavePost( organization=organization_input, produce=produce_input, expiration=expiration_input, location=location_input, delievery=delievery_input)
+        new_post.put()
+
+        all_posts.insert(0, new_post)
+
+        template_vars = {
+            "new_post": new_post,
+            "all_posts": all_posts
+        }
+
+        template = jinja_env.get_template('templates/foodlistings.html')
+        self.response.write(template.render(template_vars))
+
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
@@ -52,7 +71,7 @@ class MainHandler(webapp2.RequestHandler):
     else:
       login_url = users.create_login_url('/')
       login_html_element = '<a href="%s">Sign in</a>' % login_url
-      self.response.write('Please log in.<b>') + login_html_element)
+      self.response.write('Please log in.<b>' + login_html_element)
 
   def post(self):
      user = users.get_current_user()
@@ -86,7 +105,7 @@ class CreatePostHandler(webapp2.RequestHandler):
             "location_var": location_var,
             "delievery_var": delievery_var
         }
-        template = jinja_env.get_template('templates/view_post.html')
+        template = jinja_env.get_template('templates/foodlistings.html')
         self.response.write(template.render(the_post_var))
 
 
