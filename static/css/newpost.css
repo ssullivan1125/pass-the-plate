@@ -39,44 +39,53 @@ h1 {
   border: 3px solid purple;
 }
 
-.postbox {
+.container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin: 6% 0% 10% 15%;
-  width: 58%;
-  height: 60%;
-  border: 5px solid red;
-  border-radius: 25px;
-  background-color: #7ADAEB;
+  background-color: #FFFFFF;
+  width: 1150px;
+  height: 800px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
-.postbox form {
-  display: flex;
-  background-color: red /*#4CAF50*/;
-  justify-content: space-around;
-  flex-grow: 1;
-  flex-wrap: wrap;
-}
-.postbox label {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 20px;
-  padding: 12px 20px;
-  width: 60%;
-  height: 50px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
+.containeritem label {
+  font-size: 15px;
+  border: 2px solid red;
+  color: black;
+  font-size: 2px;
+  width: 300px;
+  height: 200px;
+  /* padding: 10px 10px 10px 10px; */
+  /* width: 300px;
+  height: 100px; */
 }
 
-.postbox label input{
-  font-size: 20px;
+.containeritem input {
+  font-size: 15px;
+  border: 2px solid black;
+  color: black;
+  font-size: 15px;
+  width: 500px;
+  height: 100px;
 }
+
 
 .postbox button {
-  width: 60%;
-  height: 10px;
-  border-bottom-left-radius: 20px 20px;
-  border-bottom-right-radius: 20px 20px;
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9C27B0, #E040FB);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 35%;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
