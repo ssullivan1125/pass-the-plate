@@ -8,8 +8,7 @@
   <body>
     <nav>
       <link rel="html" href="https://www.google.com">
-      <h1 class="menulink" id="passtheplatelogo">Pass the Pilates</h1>
-      <a class="menulink" href="foodlistings.html">Pass the Pilates</a>
+      <h1 class="menulink" id="passtheplatelogo">Pass the Plate</h1>
       <span class="spacer"></span>
       <a class="menulink" href="foodlistings.html">Food Listings</a>
       <a class="menulink" href="../static/homepage.html">Signin</a>
@@ -17,9 +16,13 @@
 
     <div class="listings">
       <div class="listingbox">
-        <h1>{{ foodname1 }}</h1>
-        <p>{{ food_details1 }}</p>
-        <p>{{ address }}</p>
+        <h2> Provider: {{ organization_var }}</h2>
+        <h3> Produce Avalible: {{ produce_var }}</h3>
+        <p> Location: {{ location_var }}</p>
+        <p> Expiration: {{ experiation_var }}</p>
+        <p> Method of Transportation: {{ delievery_var }}</p>
+
+
       </div>
       <div class="listingbox">
         <h1>{{ foodname2 }}</h1>
