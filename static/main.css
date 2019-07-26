@@ -1,58 +1,3 @@
-/* html {
-  border: 1px dotted purple;
-  height: 100%;
-}
-
-body {
-  height: 100%;
-}
-
-nav {
-  display: flex;
-  border:2px solid lightgrey;
-  background-color: grey;
-  font-weight: bold;
-  color: white;
-}
-
-#red {
-  background-color: red;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#green {
-  background-color: green;
-}
-
-.box {
-  height: 100px;
-  width: 100px;
-}
-
-.menulink {
-  color: white;
-  padding: 10px;
-}
-
-.menulink:hover {
-  background-color: green;
-}
-
-.spacer {
-  flex-grow: 1;
-}
-
-h1 {
-  justify-content: center;
-}
-
-h2 {
-  align-items: center;
-} */
-
 html {
   height: 100%;
 }
@@ -64,8 +9,6 @@ body {
 nav {
   display: flex;
   border-bottom: 2px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   background: linear-gradient(to bottom, rgba(156,39,176, 1) 5%, rgba(112, 64, 251, 1));
   justify-content: center;
   margin: 0 auto;
@@ -151,6 +94,63 @@ body {
   flex-grow: 2;
   /* border: 3px solid purple; */
 }
+
+/* html {
+  border: 1px dotted purple;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  border:2px solid lightgrey;
+  background-color: grey;
+  font-weight: bold;
+  color: white;
+}
+
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#green {
+  background-color: green;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+}
+
+.menulink {
+  color: white;
+  padding: 10px;
+}
+
+.menulink:hover {
+  background-color: green;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+h1 {
+  justify-content: center;
+}
+
+h2 {
+  align-items: center;
+} */
+
+
 /* #parent {
   border: 3px dotted black;
   display: flex;
