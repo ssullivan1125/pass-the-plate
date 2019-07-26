@@ -13,7 +13,7 @@
   align-items: center;
   margin: 80px 0px 50px 270px;
   /* background-color: #FFFFFF; */
-  background-color: white;
+  background: linear-gradient(to left, rgb(0, 204, 156, 1) 20%, rgb(0, 225, 255, 1));
   padding-top: 20px;
   width: 1100px;
   border: 5px solid red;
