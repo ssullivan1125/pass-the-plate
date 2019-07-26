@@ -73,7 +73,9 @@ nav {
 
 body {
   height: 100%;
-  background-image: url("../images/foodtable.jpeg");
+  background-image: url("../static/images/homepagebackground.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .menulink {
@@ -117,6 +119,13 @@ body {
   font-weight: 100;
   font-size: 70px;
   margin: 70px 10px 10px 350px
+}
+
+#mainTitle {
+  margin: 200px 0px 100px 390px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 120px;
+  font-weight: 500;
 }
 
 .menulink:hover {
