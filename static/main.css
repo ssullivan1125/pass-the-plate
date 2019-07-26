@@ -77,15 +77,15 @@ body {
 
 #mainTitle {
   margin: 270px 0px 0px 390px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 120px;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 #mainSubtitle {
   margin: 0px 0px 50px 440px;
   border-top: 3px solid black;
-  padding: 30px 80px 0px 80px;
+  padding: 30px 60px 0px 60px;
   color: black;
   font-family: 'Open Sans', sans-serif;
   font-size: 30px;

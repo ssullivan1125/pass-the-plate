@@ -20,40 +20,10 @@
     <div class="behindcontainer">
       <div class="container">
         <!-- {% for post in view_all_posts %} -->
-          <div class="listing">
-
-            <div class="listingbox">
-              <h1>Organization</h1>
-              <p>{{ post.organization }}</p>
-            </div>
-
-            <div class="listingbox">
-              <h1>Produce</h1>
-              <p> Produce Avalible: {{ post.produce }}</p>
-            </div>
-
-            <div class="listingbox">
-              <h1>Location</h1>
-              <p> Location: {{ post.location }}</p>
-            </div>
-
-            <div class="listingbox">
-              <h1>Expiration</h1>
-              <p> Expiration: {{ post.expiration }}</p>
-            </div>
-
-            <div class="listingbox">
-              <h1>Transportation</h1>
-              <p> Method of Transportation: {{ post.delievery }}</p>
-            </div>
-
-          </div>
-        <!-- {% endfor %} -->
         <div class="listing">
 
           <div class="listingbox">
-            <h1>Organization</h1>
-            <p>{{ post.organization }}</p>
+            <h1>{{ post.organization }}</h1>
           </div>
 
           <div class="listingbox">
@@ -77,6 +47,8 @@
           </div>
 
         </div>
+        <!-- {% endfor %} -->
+
       </div>
     </div>
 
