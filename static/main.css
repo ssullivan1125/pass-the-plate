@@ -66,7 +66,7 @@ nav {
   border-bottom: 2px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background: linear-gradient(to bottom, rgba(156,39,176, 1) 5%, rgba(224,64,251, 1));
+  background: linear-gradient(to bottom, rgba(156,39,176, 1) 5%, rgba(112, 64, 251, 1));
   justify-content: center;
   margin: 0 auto;
 }
@@ -122,11 +122,24 @@ body {
 }
 
 #mainTitle {
-  margin: 200px 0px 100px 390px;
+  margin: 270px 0px 0px 390px;
   font-family: 'Nunito', sans-serif;
   font-size: 120px;
-  font-weight: 500;
+  font-weight: 300;
 }
+
+#mainSubtitle {
+  margin: 0px 0px 50px 440px;
+  border-top: 3px solid black;
+  padding: 30px 80px 0px 80px;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  height: 300px;
+  width: 700px;
+}
+
 
 .menulink:hover {
   background: linear-gradient(to bottom, rgba(122,218,235,1) 20%, rgba(95,210,212,1));
