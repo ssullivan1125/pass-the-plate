@@ -42,50 +42,59 @@ h1 {
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 6% 0% 10% 15%;
   background-color: #FFFFFF;
-  width: 1150px;
-  height: 800px;
+  width: 1050px;
+  height: 500px;
   margin: 7em auto;
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
+.containeritem {
+  display: flex;
+  align-items: center;
+}
+
 .containeritem label {
-  font-size: 15px;
-  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  /* border: 2px solid red; */
+  padding-right: 20px;
   color: black;
-  font-size: 2px;
-  width: 300px;
-  height: 200px;
-  /* padding: 10px 10px 10px 10px; */
+  width: 350px;
+  height: 80px;
+
   /* width: 300px;
   height: 100px; */
 }
 
 .containeritem input {
+  flex-grow: 1;
   font-size: 15px;
-  border: 2px solid black;
   color: black;
   font-size: 15px;
   width: 500px;
-  height: 100px;
+  height: 80px;
 }
 
-
-.postbox button {
+.submit {
   cursor: pointer;
   border-radius: 5em;
   color: #fff;
   background: linear-gradient(to right, #9C27B0, #E040FB);
   border: 0;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 505px;
+  padding-right: 505px;
   padding-bottom: 10px;
   padding-top: 10px;
+  margin-top: 20px;
   font-family: 'Ubuntu', sans-serif;
-  margin-left: 35%;
   font-size: 13px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
