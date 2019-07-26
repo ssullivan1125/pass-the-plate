@@ -3,17 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Food Post Form</title>
+    <link rel="stylesheet" href="../static/main.css">
     <link rel="stylesheet" href="../static/css/newpost.css">
   </head>
   <body>
 
     <nav>
-      <link rel="html" href="https://www.google.com">
-      <a class="menulink" id="passtheplatelogo" href="foodlistings.html">Pass the Plates</a>
+      <a class="menulink" id="passtheplate"href="foodlistings.html">pass the plate</a>
       <span class="spacer"></span>
-      <a class="menulink" href="foodlistings.html">Food Listings</a>
-      <a class="menulink" href="../static/homepage.html">Signin</a>
+      <a class="menulink" id="browsefoodstock" href="foodlistings.html">Browse Food Stock</a>
+      <a class="menulink" id="signin" href="../static/homepage.html">Sign In</a>
     </nav>
+
+    <h1 id="make_a_new_listing">Make a new listing</h1>
 
     <div class="container">
 
@@ -24,7 +26,7 @@
 
       <div class="containeritem">
         <label for="produce">Produce:</label>
-        <input type="text" name="produce" value="" placeholder= "Produce Avalible">
+        <input type="text" name="produce" value="" placeholder= "Produce Available">
       </div>
 
       <div class="containeritem">
@@ -34,12 +36,12 @@
 
       <div class="containeritem">
         <label>Delivery:</label>
-        <input type="text" name="delievery" value="" placeholder= "Delievery or Pickup">
+        <input type="text" name="delivery" value="" placeholder= "Delivery or Pickup Method">
       </div>
 
       <div class="containeritem">
         <label>Expiration:</label>
-        <input type="text" name="expiration" value="" placeholder= "Experiation Date">
+        <input type="text" name="expiration" value="" placeholder= "Expiration Date">
       </div>
 
       <button  type="button"  class="submit" name="button">Submit</button>

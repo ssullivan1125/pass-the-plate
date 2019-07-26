@@ -2,13 +2,18 @@ html {
   height: 100%;
 }
 
+body {
+  margin:0;
+  padding:0;
+}
 nav {
   display: flex;
-  border:2px solid lightgrey;
-  background-color: #73CCFF;
-  font-weight: bold;
-  border-radius: 15px;
+  border-bottom: 2px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: linear-gradient(to bottom, rgba(156,39,176, 1) 5%, rgba(224,64,251, 1));
   justify-content: center;
+  margin: 0 auto;
 }
 
 body {
@@ -16,37 +21,69 @@ body {
   background-image: url("../images/foodtable.jpeg");
 }
 
-h1 {
-  justify-content: flex-start;
-}
-
 .menulink {
   color: black;
-  font-family: cursive;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 200;
   font-size: 14px;
-  padding: 8px 20px 8px 20px;
+  text-decoration: none;
+  /* padding: 20px 20px 15px 30px; */
   font-size: 20px;
   flex-grow: 1px;
   /* align-content: center; */
 }
 
+#passtheplate {
+  /* padding: 23px 0px 30px 0px; */
+  margin: 23px 0px 23px 150px;
+  /* margin-left: 150px; */
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+}
+
+#passtheplate:hover {
+  color: white;
+  background: none;
+}
+
+#browsefoodstock {
+  padding: 31px 15px 0px 15px;
+
+}
+
+#signin {
+  padding: 31px 15px 0px 15px;
+  margin: 0px 200px 0px 0px;
+}
+
+#make_a_new_listing {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: 70px;
+  margin: 70px 10px 10px 350px
+}
+
 .menulink:hover {
-  background-color: #7ADAEB;
+  background: linear-gradient(to bottom, rgba(122,218,235,1) 20%, rgba(95,210,212,1));
+  /* background-color: #7ADAEB; */
+  border-radius:
 }
 
 .spacer {
-  flex-grow: 3;
-  border: 3px solid purple;
+  flex-grow: 2;
+  /* border: 3px solid purple; */
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
-  margin: 6% 0% 10% 15%;
+  margin: 20px 0% 30px 320px;
   background-color: #FFFFFF;
+  padding-top: 20px;
   width: 1050px;
   height: 500px;
-  margin: 7em auto;
+  /* margin: 7em auto; */
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
@@ -85,7 +122,10 @@ h1 {
 
 .submit {
   cursor: pointer;
-  border-radius: 5em;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
   color: #fff;
   background: linear-gradient(to right, #9C27B0, #E040FB);
   border: 0;
