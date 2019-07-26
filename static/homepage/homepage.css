@@ -1,0 +1,25 @@
+.title {
+  text-align: center;
+}
+
+.bio {
+  text-align: center;
+}
+.centerImg{
+  display: flex;
+  justify-content: center;
+  margin: 70px;
+}
+#SoupKitchen{
+  width: 1300px;
+  height: 800px;
+}
+#SoupKitchen:hover {
+    webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+    filter: blur(4px);
+}
+
+h1 {
+  font-family: 'Francois One', sans-serif;
+
+}
