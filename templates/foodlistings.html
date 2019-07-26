@@ -19,13 +19,28 @@
 
     {% for post in view_all_posts %}
 
-    <div class="listings">
+    <div class="container">
       <div class="listingbox">
-        <h2>{{ post.organization }}</h2>
-        <h3> Produce Avalible: {{ post.produce }}</h3>
-        <p> Location: {{ post.location }}</p>
-        <p> Expiration: {{ post.expiration }}</p>
-        <p> Method of Transportation: {{ post.delievery }}</p>
+        <div class="listingbox">
+          <h2>{{ post.organization }}</h2>
+        </div>
+
+        <div class="listingbox">
+          <h3> Produce Avalible: {{ post.produce }}</h3>
+        </div>
+
+        <div class="listingbox">
+          <p> Location: {{ post.location }}</p>
+        </div>
+
+        <div class="listingbox">
+          <p> Expiration: {{ post.expiration }}</p>
+        </div>
+
+        <div class="listingbox">
+          <p> Method of Transportation: {{ post.delievery }}</p>
+        </div>
+
       </div>
     </div>
 
