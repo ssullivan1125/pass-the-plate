@@ -18,7 +18,7 @@ nav {
 
 body {
   height: 100%;
-  background-image: url("../images/foodtable.jpeg");
+  background-image: url("../images/newpostbackground.jpg");
 }
 
 .menulink {
@@ -61,6 +61,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 100;
   font-size: 70px;
+  color: #b700e0;
   margin: 70px 10px 10px 350px
 }
 
@@ -79,7 +80,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 20px 0% 30px 320px;
-  background-color: #FFFFFF;
+  /* background-color: #FFFFFF; */
+  background: linear-gradient(to left, rgb(0, 204, 156, 1) 20%, rgb(0, 225, 255, 1));
   padding-top: 20px;
   width: 1050px;
   height: 500px;
