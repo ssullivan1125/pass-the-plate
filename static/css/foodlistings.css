@@ -10,7 +10,7 @@
   height: auto;
   margin: 6% 0px 0px 24%;
   padding: 0px 0px 30px 50px;
-  background-color: grey;
+  background-color: #556f78;
   border-radius: 30px;
 
 }
@@ -59,4 +59,8 @@
 }
 
 .listingbox p {
+}
+
+#organization {
+  font-family: 'Montserrat', sans-serif;
 }
