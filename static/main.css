@@ -45,8 +45,9 @@ body {
 }
 
 .backbutton {
-  margin-left: 300px;
-  margin-top: 30px;
+  display: inline-block;
+  margin-left: 26px;
+  margin-top: 20px;
   margin-bottom: 20px;
   padding: 7px 14px 7px 14px;
   border: none;
@@ -63,6 +64,16 @@ body {
 
 .backbutton:focus {
   outline: none;
+}
+
+.page_title {
+  display: inline-block;
+  margin: 18px 0px 10px 100px;
+  font-size: 50px;
+  font-family: 'Questrial', sans-serif;
+  font-style: italic;
+  font-weight: 200;
+  color: black;
 }
 
 #passtheplate {
