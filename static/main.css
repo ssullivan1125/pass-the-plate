@@ -67,14 +67,16 @@ body {
 }
 
 .page_title {
-  display: inline-block;
-  margin: 18px 0px 10px 100px;
+  margin: 18px 0px 10px 260px;
+  padding: 10px 40px 10px 40px;
   font-size: 50px;
   font-family: 'Questrial', sans-serif;
-  font-style: italic;
-  font-weight: 200;
+  /* font-style: italic; */
+  font-weight: 700;
   color: black;
 }
+
+
 
 #passtheplate {
   /* padding: 23px 0px 30px 0px; */
