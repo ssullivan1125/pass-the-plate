@@ -38,9 +38,9 @@ class ViewPostHandler(webapp2.RequestHandler):
         produce_input = self.request.get('produce')
         expiration_input = self.request.get('expiration')
         location_input = self.request.get('location')
-        delievery_input = self.request.get('delievery')
+        delivery_input = self.request.get('delivery')
 
-        new_post = SavePost( organization=organization_input, produce=produce_input, expiration=expiration_input, location=location_input, delievery=delievery_input)
+        new_post = SavePost( organization=organization_input, produce=produce_input, expiration=expiration_input, location=location_input, delivery=delivery_input)
         new_post.put()
 
         view_all_posts.insert(0, new_post)
@@ -111,14 +111,14 @@ class CreatePostHandler(webapp2.RequestHandler):
         produce_var = self.request.get('produce')
         expiration_var = self.request.get('expiration')
         location_var = self.request.get('location')
-        delievery_var = self.request.get('delievery')
+        delivery_var = self.request.get('delivery')
 
         the_post_var = {
             "organization_var": organization_var,
             "produce_var": produce_var,
             "expiration_var": expiration_var,
             "location_var": location_var,
-            "delievery_var": delievery_var
+            "delivery_var": delivery_var
         }
         template = jinja_env.get_template('/foodlistings.html')
         self.response.write(template.render(the_post_var))
