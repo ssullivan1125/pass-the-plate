@@ -1,11 +1,12 @@
 
 #make_a_new_listing {
   font-family: 'Lato', sans-serif;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 70px;
-  color: #b700e0;
-  text-shadow: 2px 2px 3px;
-  margin: 70px 10px 10px 350px
+  color: black;
+  text-shadow: 0px 0px 10px lightgrey;
+  margin: 70px 10px 10px 350px;
+
 }
 
 .menulink:hover {
@@ -30,7 +31,7 @@
   height: 500px;
   /* margin: 7em auto; */
   border-radius: 1.5em;
-  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.3);
 }
 
 .containeritem {
