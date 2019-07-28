@@ -17,7 +17,7 @@ nav {
 body {
   height: 100%;
   background-image: url("../static/images/homepagebackground.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100% 100%;
 }
 
@@ -44,6 +44,27 @@ body {
   /* border: 3px solid purple; */
 }
 
+.backbutton {
+  margin-left: 300px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 7px 14px 7px 14px;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 25px;
+  color: white;
+  background-color: #3d0861;
+}
+.backbutton:hover {
+  background: orange;
+  box-shadow: 0px 0px #000000;
+}
+
+.backbutton:focus {
+  outline: none;
+}
+
 #passtheplate {
   /* padding: 23px 0px 30px 0px; */
   margin: 23px 0px 23px 150px;
@@ -64,6 +85,11 @@ body {
 }
 
 #signin {
+  padding: 31px 15px 0px 15px;
+  margin: 0px 0px 0px 0px;
+}
+
+#about {
   padding: 31px 15px 0px 15px;
   margin: 0px 200px 0px 0px;
 }

@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <link rel="stylesheet" href="../static/main.css">
     <link rel="stylesheet" href="../static/css/foodlistings.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Oxygen&display=swap" rel="stylesheet">
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
     <style>#browsefoodstock {color: #E64200; font-weight: 500;}</style>
     <meta charset="utf-8">
-    <title>Signup</title>
+    <title>Listings</title>
   </head>
+
+
   <body>
 
     <nav>
       <a class="menulink" id="passtheplate"href="homepage.html">pass the plate</a>
       <span class="spacer"></span>
-      <a class="menulink" id="browsefoodstock" href="foodlistings.html">Browse Food Stock</a>
+      <a class="menulink" id="browsefoodstock" href="foodlistings.html">Browse Food Listings</a>
       <a class="menulink" id="signin" href="SignupPage.html">Sign In</a>
+      <a class="menulink" id="about" href="aboutus.html">About</a>
     </nav>
 
+    <button onclick="goBack()" class="backbutton"> < Back </button>
 
     <div class="behindcontainer">
       <div class="container">
@@ -23,7 +34,63 @@
         <div class="listing">
 
           <div class="listingbox" id="organization">
-            <h1>{{ post.organization }}</h1>
+            <h1 id="organization">{{ post.organization }}</h1>
+          </div>
+
+          <div class="listingbox">
+            <h1>Produce</h1>
+            <p> Produce Avalible: {{ post.produce }}</p>
+          </div>
+
+          <div class="listingbox">
+            <h1>Location</h1>
+            <p> Location: {{ post.location }}</p>
+          </div>
+
+          <div class="listingbox">
+            <h1>Expiration</h1>
+            <p> Expiration: {{ post.expiration }}</p>
+          </div>
+
+          <div class="listingbox">
+            <h1>Transportation</h1>
+            <p> Method of Transportation: {{ post.delievery }}</p>
+          </div>
+
+        </div>
+
+        <div class="listing">
+
+          <div class="listingbox" id="organization">
+            <h1 id="organization">{{ post.organization }}</h1>
+          </div>
+
+          <div class="listingbox">
+            <h1>Produce</h1>
+            <p> Produce Avalible: {{ post.produce }}</p>
+          </div>
+
+          <div class="listingbox">
+            <h1>Location</h1>
+            <p> Location: {{ post.location }}</p>
+          </div>
+
+          <div class="listingbox">
+            <h1>Expiration</h1>
+            <p> Expiration: {{ post.expiration }}</p>
+          </div>
+
+          <div class="listingbox">
+            <h1>Transportation</h1>
+            <p> Method of Transportation: {{ post.delievery }}</p>
+          </div>
+
+        </div>
+
+        <div class="listing">
+
+          <div class="listingbox" id="organization">
+            <h1 id="organization">{{ post.organization }}</h1>
           </div>
 
           <div class="listingbox">
