@@ -159,7 +159,7 @@ class AboutHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-  ('/homepage', WelcomeHandler),
+  ('/', WelcomeHandler),
   ('/account', MainHandler),
   ('/newpost', CreatePostHandler),
   ('/listings', ViewPostHandler),
