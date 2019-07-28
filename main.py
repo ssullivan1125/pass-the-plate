@@ -120,7 +120,7 @@ class CreatePostHandler(webapp2.RequestHandler):
             "location_var": location_var,
             "delievery_var": delievery_var
         }
-        template = jinja_env.get_template('templates/foodlistings.html')
+        template = jinja_env.get_template('/foodlistings.html')
         self.response.write(template.render(the_post_var))
 
 class AboutHandler(webapp2.RequestHandler):
@@ -159,10 +159,10 @@ class AboutHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-  ('/', WelcomeHandler),
+  ('/homepage', WelcomeHandler),
   ('/account', MainHandler),
-  ('/createpost', CreatePostHandler),
-  ('/foodlistings', ViewPostHandler),
+  ('/newpost', CreatePostHandler),
+  ('/listings', ViewPostHandler),
   ('/about', AboutHandler)
 
 
