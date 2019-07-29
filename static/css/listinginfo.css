@@ -1,13 +1,7 @@
-#make_a_new_listing {
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-size: 70px;
-  margin: 70px 10px 10px 350px
-}
-
 .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0px 0% 10% 14%;
   width: 1200px;
   height: 600px;
@@ -21,13 +15,7 @@
   justify-content: flex-end;
   width: 600px;
   height: 600px;
-  /* justify-content: space-between;
-  margin-bottom: 40px;
-  padding: 20px 30px 20px 30px;
-  /* margin: 10% 0px 0px 30%; */
-  /* background: linear-gradient(to bottom right, #3d0861 30%, #aa00ff); */
-  /* box-shadow: 10px 10px 10px 10px #FFFFFF */
-  /* box-shadow: 11px 35px 2px rgba(0, 0, 0, 1); */
+
 }
 
 .listingmap {
@@ -35,9 +23,9 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  border-left: 1px solid black;
   width: 600px;
-  height: 600px;
+  height: 540px;
 }
 
 .listingbox {
@@ -76,10 +64,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-
 #listingmapwhitebg {
   background-color: black;
 }
+
 #map {
   height: 500px;
   width: 500px;
