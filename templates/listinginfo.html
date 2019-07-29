@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/listinginfo.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Oxygen|Questrial&display=swap" rel="stylesheet">
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+    <!-- <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
+    </script> -->
+    <style>#browsefoodstock {color: #E64200; font-weight: 500;}</style>
+    <meta charset="utf-8">
+    <title>Listings</title>
+  </head>
+
+
+  <body>
+    <nav>
+      <a class="menulink" id="passtheplate"href="/">pass the plate</a>
+      <span class="spacer"></span>
+      <a class="menulink" id="browsefoodstock" href="/listings">Browse Food Listings</a>
+      <a class="menulink" id="signin" href="/account">Sign In</a>
+      <a class="menulink" id="about" href="/about">About</a>
+    </nav>
+
+    <button onclick="goBack()" class="backbutton"> < Back </button>
+
+    <div class="container">
+      <div class="listinginfo">
+
+
+        <div class="listingbox" id="organization">
+          <h1 id="organization">{{ post.organization }}</h1>
+        </div>
+
+        <div class="listingbox">
+          <h1>Items</h1>
+          <p placeholder="Roadhouse"> {{ post.produce }}</p>
+        </div>
+
+        <div class="listingbox">
+          <h1>Location</h1>
+          <p>{{ post.location }}</p>
+        </div>
+
+        <div class="listingbox">
+          <h1>Expiration</h1>
+          <p>{{ post.expiration }}</p>
+        </div>
+
+        <div class="listingbox">
+          <h1>Delivery Method</h1>
+          <p>{{ post.delivery }}</p>
+        </div>
+      </div>
+
+      <div class="listingmap">    
+          <div id="map"></div>
+      </div>
+
+    </div>
+  </body>
+
+  <script src="../static/js/main.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRuNHBNlBC74Fs4HktyxnZUa6DhtqCY5Q&callback=initMap">
+  </script>
+
+</html>
