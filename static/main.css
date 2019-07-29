@@ -1,0 +1,183 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin:0;
+  padding:0;
+}
+nav {
+  display: flex;
+  border-bottom: 2px;
+  background: linear-gradient(to bottom, rgba(156,39,176, 1) 5%, rgba(112, 64, 251, 1));
+  justify-content: center;
+  margin: 0 auto;
+}
+
+body {
+  height: 100%;
+  background-image: url("../static/images/homepagebackground.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.menulink {
+  color: black;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  text-decoration: none;
+  /* padding: 20px 20px 15px 30px; */
+  font-size: 20px;
+  flex-grow: 1px;
+  /* align-content: center; */
+}
+
+.menulink:hover {
+  background: linear-gradient(to bottom, rgba(122,218,235,1) 20%, rgba(95,210,212,1));
+  /* background-color: #7ADAEB; */
+  border-radius:
+}
+
+.spacer {
+  flex-grow: 2;
+  /* border: 3px solid purple; */
+}
+
+#passtheplate {
+  /* padding: 23px 0px 30px 0px; */
+  margin: 23px 0px 23px 150px;
+  /* margin-left: 150px; */
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+}
+
+#passtheplate:hover {
+  color: white;
+  background: none;
+}
+
+#browsefoodstock {
+  padding: 31px 15px 0px 15px;
+
+}
+
+#signin {
+  padding: 31px 15px 0px 15px;
+  margin: 0px 200px 0px 0px;
+}
+
+#make_a_new_listing {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: 70px;
+  margin: 70px 10px 10px 350px
+}
+
+#mainTitle {
+  margin: 270px 0px 0px 390px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 120px;
+  font-weight: 200;
+}
+
+#mainSubtitle {
+  margin: 0px 0px 50px 440px;
+  border-top: 3px solid black;
+  padding: 30px 60px 0px 60px;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  height: 300px;
+  width: 700px;
+}
+
+
+
+
+/* html {
+  border: 1px dotted purple;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  border:2px solid lightgrey;
+  background-color: grey;
+  font-weight: bold;
+  color: white;
+}
+
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#green {
+  background-color: green;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+}
+
+.menulink {
+  color: white;
+  padding: 10px;
+}
+
+.menulink:hover {
+  background-color: green;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+h1 {
+  justify-content: center;
+}
+
+h2 {
+  align-items: center;
+} */
+
+
+/* #parent {
+  border: 3px dotted black;
+  display: flex;
+  height: 500px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+} */
+
+
+
+/*
+
+.signup {
+  background-image: url("restaurantbackground.jpeg");
+}
+
+.signup h1 {
+  font-family: "Montserrat", sans-serif;
+} */
+/* =======
+
+.text{
+  color: white;
+  padding: 200px 0;
+  text-align: center;
+} */
