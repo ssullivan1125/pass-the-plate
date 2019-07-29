@@ -56,6 +56,43 @@ class ViewPostHandler(webapp2.RequestHandler):
         template = jinja_env.get_template('templates/foodlistings.html')
         self.response.write(template.render(template_vars))
 
+class LookAtPostHandler(webapp2.RequestHandler):
+    def get(self):
+
+        view_selected_post = SavePost.query().fetch()
+
+        template_vars = {
+            "view_selected_post": view_selected_post
+        }
+
+        template = jinja_env.get_template('templates/listinginfo.html')
+        # print('Hi! Here are the food listings!')
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write(template.render(template_vars))
+
+
+    def post(self):
+        view_selected_post = SavePost.query().fetch(1)
+
+        organization_input = self.request.get('organization')
+        produce_input = self.request.get('produce')
+        expiration_input = self.request.get('expiration')
+        location_input = self.request.get('location')
+        delivery_input = self.request.get('delivery')
+
+        current_post = SavePost( organization=organization_input, produce=produce_input, expiration=expiration_input, location=location_input, delivery=delivery_input)
+        current_post.put()
+
+        template_vars = {
+            "new_post": new_post,
+            "view_selected_post": view_selected_post
+        }
+
+        print(view_selected_post)
+        print(current_post)
+
+        template = jinja_env.get_template('templates/listinginfo.html')
+        self.response.write(template.render(template_vars))
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
@@ -129,6 +166,19 @@ class AboutHandler(webapp2.RequestHandler):
         self.response.write(start_template.render())
 
 
+app = webapp2.WSGIApplication([
+  ('/', WelcomeHandler),
+  ('/account', MainHandler),
+  ('/newpost', CreatePostHandler),
+  ('/listings', ViewPostHandler),
+  ('/listinginfo', LookAtPostHandler),
+  ('/about', AboutHandler)
+
+
+], debug=True)
+
+
+
 # class CreatePostHandler(webapp2.RequestHandler):
 #      def get(self):
 #         template = jinja_env.get_template('templates/homepage.html')
@@ -155,15 +205,3 @@ class AboutHandler(webapp2.RequestHandler):
 #         sending_user.messages.append(message_key).put()
 #
 #         self.redirect('/profile')
-
-
-
-app = webapp2.WSGIApplication([
-  ('/', WelcomeHandler),
-  ('/account', MainHandler),
-  ('/newpost', CreatePostHandler),
-  ('/listings', ViewPostHandler),
-  ('/about', AboutHandler)
-
-
-], debug=True)
