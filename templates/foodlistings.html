@@ -36,8 +36,8 @@
     </div>
     <div class="behindcontainer">
       <div class="container">
-        <!-- {% for post in view_all_posts %} -->
-        <a href="/listinginfo" class="listinginfolink">
+        {% for post in view_all_posts %}
+        <a href="/listinginfo?postkey={{ post.key.urlsafe() }}" class="listinginfolink">
           <div class="listing">
 
             <div class="listingbox" id="organization">
@@ -66,7 +66,7 @@
 
           </div>
         </a>
-        <!-- {% endfor %} -->
+        {% endfor %}
 
       </div>
     </div>
