@@ -16,14 +16,30 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="../static/css/main.css">
   <link rel="stylesheet" href="../static/css/SigninPage.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+  <style>#signin {color: #E64200; font-weight: 500;}</style>
+
   <title>Sign in</title>
 </head>
 
 <body>
+  <nav>
+    <a class="menulink" id="passtheplate"href="/">pass the plate</a>
+    <span class="spacer"></span>
+    <a class="menulink" id="browsefoodstock" href="/listings">Browse Food Listings</a>
+    <a class="menulink" id="signin" href="/account">Sign In</a>
+    <a class="menulink" id="about" href="/about">About</a>
+  </nav>
+
     <a class="menulink" href="/account">Food Listing</a>
   <div class="main">
     <img src="/static/images/ptp.png" height=300 width= 400

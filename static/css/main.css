@@ -16,13 +16,13 @@ nav {
 
 body {
   height: 100%;
-  background-image: url("../static/images/homepagebackground.jpg");
-  background-repeat: no-repeat;
+  background-image: url("../images/homepagebackground.jpg");
+  background-repeat: repeat;
   background-size: 100% 100%;
 }
 
 .menulink {
-  color: black;
+  color: white;
   font-family: 'Quicksand', sans-serif;
   font-weight: 200;
   font-size: 14px;
@@ -35,14 +35,48 @@ body {
 
 .menulink:hover {
   background: linear-gradient(to bottom, rgba(122,218,235,1) 20%, rgba(95,210,212,1));
-  /* background-color: #7ADAEB; */
-  border-radius:
+  color: #ff6803;
+  font-weight: 500;
 }
 
 .spacer {
   flex-grow: 2;
   /* border: 3px solid purple; */
 }
+
+.backbutton {
+  display: inline-block;
+  margin-left: 26px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 7px 14px 7px 14px;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 25px;
+  color: white;
+  background-color: #3d0861;
+}
+.backbutton:hover {
+  background: orange;
+  box-shadow: 0px 0px #000000;
+}
+
+.backbutton:focus {
+  outline: none;
+}
+
+.page_title {
+  margin: 18px 0px 10px 260px;
+  padding: 10px 40px 10px 40px;
+  font-size: 50px;
+  font-family: 'Questrial', sans-serif;
+  /* font-style: italic; */
+  font-weight: 700;
+  color: black;
+}
+
+
 
 #passtheplate {
   /* padding: 23px 0px 30px 0px; */
@@ -64,6 +98,11 @@ body {
 }
 
 #signin {
+  padding: 31px 15px 0px 15px;
+  margin: 0px 0px 0px 0px;
+}
+
+#about {
   padding: 31px 15px 0px 15px;
   margin: 0px 200px 0px 0px;
 }

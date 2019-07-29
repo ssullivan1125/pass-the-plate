@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 0% 10% 14%;
+  width: 1200px;
+  height: 600px;
+  border-radius: 30px;
+  background-color: white;
+}
+
+.listinginfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 600px;
+  height: 600px;
+
+}
+
+.listingmap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid black;
+  width: 600px;
+  height: 540px;
+}
+
+.listingbox {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1px 4px 1px 4px;
+  width: 700px;
+}
+.listingbox h1 {
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  text-align: center;
+  font-size: 23px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  padding-left: 100px;
+}
+
+.listingbox p {
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 200;
+  color: black;
+  margin-left: 15px;
+  padding-bottom: 4px;
+
+}
+
+#organization {
+  text-align: left;
+  overflow: scroll;
+  color: black;
+  font-size: 40px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#listingmapwhitebg {
+  background-color: black;
+}
+
+#map {
+  height: 500px;
+  width: 500px;
+}

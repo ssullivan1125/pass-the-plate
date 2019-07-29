@@ -18,7 +18,7 @@ class SavePost(ndb.Model):
     produce = ndb.StringProperty()
     expiration = ndb.StringProperty()
     location = ndb.StringProperty()
-    delievery = ndb.StringProperty()
+    delivery = ndb.StringProperty()
 
 
 #  class Post(ndb.Model):

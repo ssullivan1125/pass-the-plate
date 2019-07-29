@@ -38,9 +38,9 @@ class ViewPostHandler(webapp2.RequestHandler):
         produce_input = self.request.get('produce')
         expiration_input = self.request.get('expiration')
         location_input = self.request.get('location')
-        delievery_input = self.request.get('delievery')
+        delivery_input = self.request.get('delivery')
 
-        new_post = SavePost( organization=organization_input, produce=produce_input, expiration=expiration_input, location=location_input, delievery=delievery_input)
+        new_post = SavePost( organization=organization_input, produce=produce_input, expiration=expiration_input, location=location_input, delivery=delivery_input)
         new_post.put()
 
         view_all_posts.insert(0, new_post)
@@ -56,6 +56,43 @@ class ViewPostHandler(webapp2.RequestHandler):
         template = jinja_env.get_template('templates/foodlistings.html')
         self.response.write(template.render(template_vars))
 
+class LookAtPostHandler(webapp2.RequestHandler):
+    def get(self):
+
+        view_selected_post = SavePost.query().fetch()
+
+        template_vars = {
+            "view_selected_post": view_selected_post
+        }
+
+        template = jinja_env.get_template('templates/listinginfo.html')
+        # print('Hi! Here are the food listings!')
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write(template.render(template_vars))
+
+
+    def post(self):
+        view_selected_post = SavePost.query().fetch(1)
+
+        organization_input = self.request.get('organization')
+        produce_input = self.request.get('produce')
+        expiration_input = self.request.get('expiration')
+        location_input = self.request.get('location')
+        delivery_input = self.request.get('delivery')
+
+        current_post = SavePost( organization=organization_input, produce=produce_input, expiration=expiration_input, location=location_input, delivery=delivery_input)
+        current_post.put()
+
+        template_vars = {
+            "new_post": new_post,
+            "view_selected_post": view_selected_post
+        }
+
+        print(view_selected_post)
+        print(current_post)
+
+        template = jinja_env.get_template('templates/listinginfo.html')
+        self.response.write(template.render(template_vars))
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
@@ -111,22 +148,35 @@ class CreatePostHandler(webapp2.RequestHandler):
         produce_var = self.request.get('produce')
         expiration_var = self.request.get('expiration')
         location_var = self.request.get('location')
-        delievery_var = self.request.get('delievery')
+        delivery_var = self.request.get('delivery')
 
         the_post_var = {
             "organization_var": organization_var,
             "produce_var": produce_var,
             "expiration_var": expiration_var,
             "location_var": location_var,
-            "delievery_var": delievery_var
+            "delivery_var": delivery_var
         }
-        template = jinja_env.get_template('templates/foodlistings.html')
+        template = jinja_env.get_template('/foodlistings.html')
         self.response.write(template.render(the_post_var))
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         start_template = jinja_env.get_template("templates/aboutus.html")
         self.response.write(start_template.render())
+
+
+app = webapp2.WSGIApplication([
+  ('/', WelcomeHandler),
+  ('/account', MainHandler),
+  ('/newpost', CreatePostHandler),
+  ('/listings', ViewPostHandler),
+  ('/listinginfo', LookAtPostHandler),
+  ('/about', AboutHandler)
+
+
+], debug=True)
+
 
 
 # class CreatePostHandler(webapp2.RequestHandler):
@@ -155,15 +205,3 @@ class AboutHandler(webapp2.RequestHandler):
 #         sending_user.messages.append(message_key).put()
 #
 #         self.redirect('/profile')
-
-
-
-app = webapp2.WSGIApplication([
-  ('/', WelcomeHandler),
-  ('/account', MainHandler),
-  ('/createpost', CreatePostHandler),
-  ('/foodlistings', ViewPostHandler),
-  ('/about', AboutHandler)
-
-
-], debug=True)

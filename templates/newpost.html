@@ -2,23 +2,34 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Food Post Form</title>
-    <link rel="stylesheet" href="../static/main.css">
+    <title>Make a Listing</title>
+    <link rel="stylesheet" href="../static/css/main.css">
     <link rel="stylesheet" href="../static/css/newpost.css">
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+    <style>#newpost {color: #E64200; font-weight: 500;}</style>
   </head>
+
+
   <body>
 
     <nav>
-      <a class="menulink" id="passtheplate"href="homepage.html">pass the plate</a>
+      <a class="menulink" id="passtheplate"href="/homepage">pass the plate</a>
       <span class="spacer"></span>
-      <a class="menulink" id="browsefoodstock" href="foodlistings.html">Browse Food Stock</a>
-      <a class="menulink" id="signin" href="SignupPage.html">Sign Up</a>
+      <a class="menulink" id="browsefoodstock" href="/listings">Browse Food Listings</a>
+      <a class="menulink" id="signin" href="/account">Sign In</a>
+      <a class="menulink" id="about" href="/about">About</a>
     </nav>
+
+    <button onclick="goBack()" class="backbutton"> < Back </button>
 
     <h1 id="make_a_new_listing">Make a new listing...</h1>
 
 
-    <form action="/foodlistings" method="post">
+    <form action="/listings" method="post">
       <div class="container">
 
           <div class="containeritem">
