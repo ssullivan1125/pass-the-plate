@@ -129,7 +129,7 @@ class AboutHandler(webapp2.RequestHandler):
         self.response.write(start_template.render())
 
 
-# class MessageHandler(webapp2.RequestHandler):
+# class CreatePostHandler(webapp2.RequestHandler):
 #      def get(self):
 #         template = jinja_env.get_template('templates/homepage.html')
 #         self.response.headers['Content-Type'] = 'text/html'

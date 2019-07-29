@@ -12,41 +12,44 @@
       <a class="menulink" id="passtheplate"href="homepage.html">pass the plate</a>
       <span class="spacer"></span>
       <a class="menulink" id="browsefoodstock" href="foodlistings.html">Browse Food Stock</a>
-      <a class="menulink" id="signin" href="../static/homepage.html">Sign In</a>
+      <a class="menulink" id="signin" href="SignupPage.html">Sign Up</a>
     </nav>
 
     <h1 id="make_a_new_listing">Make a new listing...</h1>
 
-    <div class="container">
 
-      <div class="containeritem">
-        <label>Organization:</label>
-        <input type="text" name="organization" value="" placeholder="Organization Name">
+    <form action="/foodlistings" method="post">
+      <div class="container">
+
+          <div class="containeritem">
+            <label>Organization:</label>
+            <input type="text" name="organization" placeholder="Organization Name">
+          </div>
+
+          <div class="containeritem">
+            <label>Produce:</label>
+            <input type="text" name="produce" placeholder= "Produce Available">
+          </div>
+
+          <div class="containeritem">
+            <label>Location:</label>
+            <input type="text" name="location" placeholder= "Restaurant Location">
+          </div>
+
+          <div class="containeritem">
+            <label>Delivery:</label>
+            <input type="text" name="delivery" placeholder= "Delivery or Pickup Method">
+          </div>
+
+          <div class="containeritem">
+            <label>Expiration:</label>
+            <input type="text" name="expiration" placeholder= "Expiration Date">
+          </div>
+
+          <button  type="submit"  class="submit" name="button">Submit</button>
+
       </div>
-
-      <div class="containeritem">
-        <label for="produce">Produce:</label>
-        <input type="text" name="produce" value="" placeholder= "Produce Available">
-      </div>
-
-      <div class="containeritem">
-        <label>Location:</label>
-        <input type="text" name="location" value="" placeholder= "Restaurant Location">
-      </div>
-
-      <div class="containeritem">
-        <label>Delivery:</label>
-        <input type="text" name="delivery" value="" placeholder= "Delivery or Pickup Method">
-      </div>
-
-      <div class="containeritem">
-        <label>Expiration:</label>
-        <input type="text" name="expiration" value="" placeholder= "Expiration Date">
-      </div>
-
-      <button  type="button"  class="submit" name="button">Submit</button>
-
-  </div>
+    </form>
 
   </body>
 </html>

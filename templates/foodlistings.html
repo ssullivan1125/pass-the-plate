@@ -13,23 +13,44 @@
       <a class="menulink" id="passtheplate"href="homepage.html">pass the plate</a>
       <span class="spacer"></span>
       <a class="menulink" id="browsefoodstock" href="foodlistings.html">Browse Food Stock</a>
-      <a class="menulink" id="signin" href="../static/homepage.html">Sign In</a>
+      <a class="menulink" id="signin" href="SignupPage.html">Sign In</a>
     </nav>
 
 
-    {% for post in view_all_posts %}
+    <div class="behindcontainer">
+      <div class="container">
+        <!-- {% for post in view_all_posts %} -->
+        <div class="listing">
 
-    <div class="listings">
-      <div class="listingbox">
-        <h2>{{ post.organization }}</h2>
-        <h3> Produce Avalible: {{ post.produce }}</h3>
-        <p> Location: {{ post.location }}</p>
-        <p> Expiration: {{ post.expiration }}</p>
-        <p> Method of Transportation: {{ post.delievery }}</p>
+          <div class="listingbox">
+            <h1>{{ post.organization }}</h1>
+          </div>
+
+          <div class="listingbox">
+            <h1>Produce</h1>
+            <p> Produce Avalible: {{ post.produce }}</p>
+          </div>
+
+          <div class="listingbox">
+            <h1>Location</h1>
+            <p> Location: {{ post.location }}</p>
+          </div>
+
+          <div class="listingbox">
+            <h1>Expiration</h1>
+            <p> Expiration: {{ post.expiration }}</p>
+          </div>
+
+          <div class="listingbox">
+            <h1>Transportation</h1>
+            <p> Method of Transportation: {{ post.delievery }}</p>
+          </div>
+
+        </div>
+        <!-- {% endfor %} -->
+
       </div>
     </div>
-
-    {% endfor %}
 
 
     <!-- <div class="signup">
