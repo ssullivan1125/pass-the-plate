@@ -1,3 +1,14 @@
+html{
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-image: url(../images/Newyork.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px black
+}
 
 .container {
   /* padding: 80px 120px; */
@@ -17,7 +28,9 @@
 .person:hover {
   border-color: #f1f1f1;
 }
-
+p{
+  color: white;
+}
 /*
 <img src="Sarah1.jpg" class="img-circle person" alt="Random Name">
 <img src="Sole1.jpg" class="img-circle person" alt="Random Name">
