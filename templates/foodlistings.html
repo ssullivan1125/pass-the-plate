@@ -16,7 +16,6 @@
     <title>Listings</title>
   </head>
 
-
   <body>
     <nav>
       <a class="menulink" id="passtheplate"href="/">pass the plate</a>
@@ -36,35 +35,37 @@
     </div>
     <div class="behindcontainer">
       <div class="container">
-        <!-- {% for post in view_all_posts %} -->
-        <div class="listing">
+        {% for post in view_all_posts %}
+        <a href="/listinginfo?postkey={{ post.key.urlsafe() }}" class="listinginfolink">
+          <div class="listing">
 
-          <div class="listingbox" id="organization">
-            <h1 id="organization">{{ post.organization }}</h1>
+            <div class="listingbox" id="organization">
+              <h1 id="organization">{{ post.organization }}</h1>
+            </div>
+
+            <div class="listingbox">
+              <h1>Items</h1>
+              <p placeholder="Roadhouse"> {{ post.produce }}</p>
+            </div>
+
+            <div class="listingbox">
+              <h1>Location</h1>
+              <p>{{ post.location }}</p>
+            </div>
+
+            <div class="listingbox">
+              <h1>Expiration</h1>
+              <p>{{ post.expiration }}</p>
+            </div>
+
+            <div class="listingbox">
+              <h1>Delivery Method</h1>
+              <p>{{ post.delivery }}</p>
+            </div>
+
           </div>
-
-          <div class="listingbox">
-            <h1>Items</h1>
-            <p placeholder="Roadhouse"> {{ post.produce }}</p>
-          </div>
-
-          <div class="listingbox">
-            <h1>Location</h1>
-            <p>{{ post.location }}</p>
-          </div>
-
-          <div class="listingbox">
-            <h1>Expiration</h1>
-            <p>{{ post.expiration }}</p>
-          </div>
-
-          <div class="listingbox">
-            <h1>Delivery Method</h1>
-            <p>{{ post.delivery }}</p>
-          </div>
-
-        </div>
-        <!-- {% endfor %} -->
+        </a>
+        {% endfor %}
 
       </div>
     </div>

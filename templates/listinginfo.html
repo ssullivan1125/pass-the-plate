@@ -27,38 +27,41 @@
 
     <button onclick="goBack()" class="backbutton"> < Back </button>
 
-    <div class="container">
-        <div class="listinginfo">
-              <div class="listingbox" id="organization">
-                <h1 id="organization">{{ post.organization }}</h1>
-              </div>
+    {% for post in view_selected_post %}
 
-              <div class="listingbox">
-                <h1>Items:</h1>
-                <p> {{ post.produce }}</p>
-              </div>
+      <div class="container">
+          <div class="listinginfo">
+                <div class="listingbox" id="organization">
+                  <h1 id="organization">{{ post.organization }}</h1>
+                </div>
 
-              <div class="listingbox">
-                <h1>Location:</h1>
-                <p>{{ post.location }}</p>
-              </div>
+                <div class="listingbox">
+                  <h1>Items:</h1>
+                  <p> {{ post.produce }}</p>
+                </div>
 
-              <div class="listingbox">
-                <h1>Expiration:</h1>
-                <p>{{ post.expiration }}</p>
-              </div>
+                <div class="listingbox">
+                  <h1>Location:</h1>
+                  <p>{{ post.location }}</p>
+                </div>
 
-              <div class="listingbox">
-                <h1>Delivery Method:</h1>
-                <p>{{ post.delivery }}</p>
-              </div>
+                <div class="listingbox">
+                  <h1>Expiration:</h1>
+                  <p>{{ post.expiration }}</p>
+                </div>
+
+                <div class="listingbox">
+                  <h1>Delivery Method:</h1>
+                  <p>{{ post.delivery }}</p>
+                </div>
+          </div>
+
+        <div class="listingmap">
+            <div id="map"></div>
         </div>
 
-      <div class="listingmap">
-          <div id="map"></div>
       </div>
-
-    </div>
+  {% endfor %}
   </body>
 
 

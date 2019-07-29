@@ -59,6 +59,11 @@
   /* box-shadow: 11px 35px 2px rgba(0, 0, 0, 1); */
 }
 
+.listinginfolink {
+  text-decoration: none;
+  color: black;
+}
+
 .listing {
   display: flex;
   justify-content: space-between;

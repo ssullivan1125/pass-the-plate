@@ -72,7 +72,7 @@ class LookAtPostHandler(webapp2.RequestHandler):
 
 
     def post(self):
-        view_selected_post = SavePost.query().fetch(1)
+        view_selected_post = SavePost.query().fetch()
 
         organization_input = self.request.get('organization')
         produce_input = self.request.get('produce')
@@ -92,7 +92,7 @@ class LookAtPostHandler(webapp2.RequestHandler):
         print(current_post)
 
         template = jinja_env.get_template('templates/listinginfo.html')
-        self.response.write(template.render(template_vars))
+        self.response.write(template.render(template2_vars))
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
@@ -176,32 +176,3 @@ app = webapp2.WSGIApplication([
 
 
 ], debug=True)
-
-
-
-# class CreatePostHandler(webapp2.RequestHandler):
-#      def get(self):
-#         template = jinja_env.get_template('templates/homepage.html')
-#         self.response.headers['Content-Type'] = 'text/html'
-#         self.response.write(create_template.render())
-#
-#      def post(self):
-#         curr_message_txt = self.request.get('message')
-#         curr_user = user.get_current_user()
-#         intended_reciever = 'test@gmail.com'
-#
-#         possible_reciever = PtpUser.query(intended_reciever == PtpUser.email).get()
-#
-#         curr_message = Message(
-#         message_txt = curr_message_txt,
-#         sender = curr_user,
-#         reciever = intended_reciever
-#         )
-#
-#         message_key = curr_message.put()
-#
-#         sending_user = PtpUser.query(curr_user.nickname == PtpUser.email.get())
-#
-#         sending_user.messages.append(message_key).put()
-#
-#         self.redirect('/profile')
