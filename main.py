@@ -2,11 +2,9 @@ import webapp2
 import os
 import jinja2
 import random
-from google.appengine.ext import ndb
 from google.appengine.api import users
 from models import PtpUser
 from models import SavePost
-
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -60,12 +58,11 @@ class ViewPostHandler(webapp2.RequestHandler):
 
 class LookAtPostHandler(webapp2.RequestHandler):
     def get(self):
-        keystr = self.request.get("postkey")
 
-        post = ndb.Key(urlsafe=keystr).get()
+        view_selected_post = SavePost.query().fetch()
 
         template_vars = {
-            "post": post
+            "view_selected_post": view_selected_post
         }
 
         template = jinja_env.get_template('templates/listinginfo.html')
@@ -73,6 +70,29 @@ class LookAtPostHandler(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render(template_vars))
 
+
+    def post(self):
+        view_selected_post = SavePost.query().fetch()
+
+        organization_input = self.request.get('organization')
+        produce_input = self.request.get('produce')
+        expiration_input = self.request.get('expiration')
+        location_input = self.request.get('location')
+        delivery_input = self.request.get('delivery')
+
+        current_post = SavePost( organization=organization_input, produce=produce_input, expiration=expiration_input, location=location_input, delivery=delivery_input)
+        current_post.put()
+
+        template_vars = {
+            "new_post": new_post,
+            "view_selected_post": view_selected_post
+        }
+
+        print(view_selected_post)
+        print(current_post)
+
+        template = jinja_env.get_template('templates/listinginfo.html')
+        self.response.write(template.render(template2_vars))
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
@@ -156,32 +176,3 @@ app = webapp2.WSGIApplication([
 
 
 ], debug=True)
-
-
-
-# class CreatePostHandler(webapp2.RequestHandler):
-#      def get(self):
-#         template = jinja_env.get_template('templates/homepage.html')
-#         self.response.headers['Content-Type'] = 'text/html'
-#         self.response.write(create_template.render())
-#
-#      def post(self):
-#         curr_message_txt = self.request.get('message')
-#         curr_user = user.get_current_user()
-#         intended_reciever = 'test@gmail.com'
-#
-#         possible_reciever = PtpUser.query(intended_reciever == PtpUser.email).get()
-#
-#         curr_message = Message(
-#         message_txt = curr_message_txt,
-#         sender = curr_user,
-#         reciever = intended_reciever
-#         )
-#
-#         message_key = curr_message.put()
-#
-#         sending_user = PtpUser.query(curr_user.nickname == PtpUser.email.get())
-#
-#         sending_user.messages.append(message_key).put()
-#
-#         self.redirect('/profile')
